@@ -6,6 +6,12 @@ class user_function{
     private $function_id;
     private $planning_board_id;
 
+    public function __construct($user_id, $function_id, $planning_board_id){
+        $this->setUser_id($user_id);
+        $this->setFunction_id($function_id);
+        $this->setPlanning_board_id($planning_board_id);
+    }
+
     /**
      * Get the value of user_id
      */ 

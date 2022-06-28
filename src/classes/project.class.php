@@ -6,7 +6,6 @@ class project{
     private $name;
     private $description;
 
-
     public function __construct($id, $name, $description){
         $this->setId($id);
         $this->setName($name);

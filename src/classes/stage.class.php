@@ -6,6 +6,13 @@ class stage{
     private $planning_board_id;
     private $title;
     private $description;
+    
+    public function __construct($id, $planning_board_id, $title, $description){
+        $this->setId($id);
+        $this->setPlanning_board_id($planning_board_id);
+        $this->setTitle($title);
+        $this->setDescription($description);
+    }
 
     /**
      * Get the value of id

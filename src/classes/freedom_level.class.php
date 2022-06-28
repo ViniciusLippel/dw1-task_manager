@@ -4,7 +4,7 @@ class freedom_level{
 
     private $id;
     private $description;
-    private $crate_stage;
+    private $create_stage;
     private $edit_stage;
     private $delete_stage;
     private $create_task;
@@ -14,6 +14,21 @@ class freedom_level{
     private $delete_user;
     private $edit_project;
     private $delete_project;
+
+    public function __construct($id, $description, $crate_stage, $edit_stage, $delete_stage, $create_task, $edit_task, $delete_task, $add_user, $delete_user, $edit_project, $delete_project){
+        $this->setId($id);
+        $this->setDescription($description);
+        $this->setCreate_stage($crate_stage);
+        $this->setEdit_stage($edit_stage);
+        $this->setDelete_stage($delete_stage);
+        $this->setCreate_task($create_task);
+        $this->setEdit_task($edit_task);
+        $this->setDelete_task($delete_task);
+        $this->setAdd_user($add_user);
+        $this->setDelete_user($delete_user);
+        $this->setEdit_project($edit_project);
+        $this->setDelete_project($delete_project);
+    }
 
     /**
      * Get the value of id
@@ -55,25 +70,6 @@ class freedom_level{
         return $this;
     }
 
-    /**
-     * Get the value of crate_stage
-     */ 
-    public function getCrate_stage()
-    {
-        return $this->crate_stage;
-    }
-
-    /**
-     * Set the value of crate_stage
-     *
-     * @return  self
-     */ 
-    public function setCrate_stage($crate_stage)
-    {
-        $this->crate_stage = $crate_stage;
-
-        return $this;
-    }
 
     /**
      * Get the value of edit_stage
@@ -251,6 +247,26 @@ class freedom_level{
     public function setDelete_project($delete_project)
     {
         $this->delete_project = $delete_project;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of create_stage
+     */ 
+    public function getCreate_stage()
+    {
+        return $this->create_stage;
+    }
+
+    /**
+     * Set the value of create_stage
+     *
+     * @return  self
+     */ 
+    public function setCreate_stage($create_stage)
+    {
+        $this->create_stage = $create_stage;
 
         return $this;
     }

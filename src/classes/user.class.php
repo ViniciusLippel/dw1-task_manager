@@ -8,6 +8,14 @@ class user{
     private $birth_date;
     private $lgpd;
 
+    public function __construct($id, $name, $email, $birth_date, $lgpd){
+        $this->setId($id);
+        $this->setName($name);
+        $this->setEmail($email);
+        $this->setBirth_date($birth_date);
+        $this->setLgpd($lgpd);
+    }
+
     /**
      * Get the value of id
      */ 

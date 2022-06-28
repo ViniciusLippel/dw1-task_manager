@@ -12,6 +12,18 @@ class task{
     private $creator_user_id;
     private $responsible_user_id;
 
+    public function __construct($id, $stage_id, $title, $description, $created_on, $deadline, $time_elapsed, $creator_user_id, $responsible_user_id){
+        $this->setId($id);
+        $this->setStage_id($stage_id);
+        $this->setTitle($title);
+        $this->setDescription($description);
+        $this->setCreated_on($created_on);
+        $this->setDeadline($deadline);
+        $this->setTime_elapsed($time_elapsed);
+        $this->setCreator_user_id($creator_user_id);
+        $this->setResponsible_user_id($responsible_user_id);
+    }
+
     /**
      * Get the value of id
      */ 

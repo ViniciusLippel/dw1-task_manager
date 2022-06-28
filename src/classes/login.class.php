@@ -5,6 +5,12 @@ class login{
     private $user_id;
     private $password;
 
+
+    public function __construct($user_id, $password){
+        $this->setUser_id($user_id);
+        $this->setPassword($password);
+    }
+
     /**
      * Get the value of user_id
      */ 

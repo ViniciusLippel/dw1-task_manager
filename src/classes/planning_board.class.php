@@ -7,6 +7,13 @@ class planning_board{
     private $name;
     private $description;
 
+    public function __construct($id, $project_id, $name, $description){
+        $this->setId($id);
+        $this->setProject_id($project_id);
+        $this->setName($name);
+        $this->setDescription($description);
+    }
+
     /**
      * Get the value of id
      */ 

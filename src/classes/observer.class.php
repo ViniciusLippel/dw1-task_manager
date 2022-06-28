@@ -5,6 +5,11 @@ class observer{
     private $user_id;
     private $task_id;
 
+    public function __construct($user_id, $task_id){
+        $this->setUser_id($user_id);
+        $this->setTask_id($task_id);
+    }
+
     /**
      * Get the value of user_id
      */ 
