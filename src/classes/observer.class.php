@@ -1,6 +1,8 @@
 <?php
 
-class observer{
+include_once "../interfaces/table.interface.php";
+
+class observer implements Table{
     
     private $user_id;
     private $task_id;
@@ -49,6 +51,25 @@ class observer{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO observer (user_id, task_id)
+				VALUES ('".$this->getUser_id()."','".$this->getTask_id()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM observer
+				WHERE user_id = ".$this->getUser_id()." AND task_id = ".;
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

@@ -1,7 +1,7 @@
 SET check_function_bodies = false;
 
 CREATE TABLE task(
-  id integer NOT NULL,
+  id serial NOT NULL,
   stage_id integer NOT NULL,
   title varchar(45),
   description varchar,
@@ -14,14 +14,14 @@ CREATE TABLE task(
 );
 
 CREATE TABLE project(
-  id integer NOT NULL,
+  id serial NOT NULL,
   "name" varchar(45),
   description varchar,
   CONSTRAINT project_pkey PRIMARY KEY(id)
 );
 
 CREATE TABLE planning_board(
-  id integer NOT NULL,
+  id serial NOT NULL,
   project_id integer NOT NULL,
   "name" varchar(45),
   description varchar,
@@ -29,7 +29,7 @@ CREATE TABLE planning_board(
 );
 
 CREATE TABLE "user"(
-  id integer NOT NULL,
+  id serial NOT NULL,
   "name" varchar(45),
   email varchar(45),
   birth_date date,
@@ -38,7 +38,7 @@ CREATE TABLE "user"(
 );
 
 CREATE TABLE "function"(
-  id integer NOT NULL,
+  id serial NOT NULL,
   "name" varchar(45) NOT NULL,
   description varchar NOT NULL,
   freedom_level_id integer NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE user_function(
 );
 
 CREATE TABLE freedom_level(
-  id integer NOT NULL,
+  id serial NOT NULL,
   description varchar,
   create_stage bool,
   edit_stage bool,
@@ -70,7 +70,7 @@ CREATE TABLE freedom_level(
 );
 
 CREATE TABLE stage(
-  id integer NOT NULL,
+  id serial NOT NULL,
   planning_board_id integer NOT NULL,
   title varchar(45),
   description varchar,

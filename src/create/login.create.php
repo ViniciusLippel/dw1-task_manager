@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Project</title>
+    <title>Create Login</title>
 </head>
 <body>
-    <form action="../action/project.action.php" method="post">
+    <form action="../action/login.action.php" method="post">
         <fieldset>
-            <legend>Create Project</legend><br>
+            <legend>Create Login</legend><br>
             
             <input type="hidden" name="id" id="id">
 
-            <label for="name">Name: </label><br>
-            <input type="text" name="name" id="name"><br><br>
+            <label for="user_id">User_id: </label><br>
+            <input type="text" name="user_id" id="user_id"><br><br>
 
-            <label for="description">Description: </label><br>
-            <textarea name="description" id="description" rows="4" cols="50"></textarea><br><br>
+            <label for="password">Password: </label><br>
+            <input type="password" name="password" id="password"><br><br>
             
             <button type="submit" name="action" value="save">Save</button>
         </fieldset> 

@@ -1,6 +1,8 @@
 <?php
 
-class login{
+include_once "../interfaces/table.interface.php";
+
+class login implements Table{
 
     private $user_id;
     private $password;
@@ -50,6 +52,25 @@ class login{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO login (user_id, password)
+				VALUES ('".$this->getUser_id()."','".$this->getPassword()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM login
+				WHERE user_id = ".$this->getUser_id();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

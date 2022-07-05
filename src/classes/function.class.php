@@ -1,6 +1,8 @@
 <?php
 
-class function_{
+include_once "../interfaces/table.interface.php";
+
+class function_ implements Table{
 
     private $id;
     private $name;
@@ -94,6 +96,25 @@ class function_{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO function (name, description, freedom_level_id)
+				VALUES ('".$this->getName()."','".$this->getDescription()."','".$this->getFreedom_level_id()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM function
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

@@ -1,6 +1,8 @@
 <?php
 
-class stage{
+include_once "../interfaces/table.interface.php";
+
+class stage implements Table{
 
     private $id;
     private $planning_board_id;
@@ -93,6 +95,25 @@ class stage{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO stage (planning_board_id, title, description)
+				VALUES ('".$this->getPlanning_board_id()."','".$this->getTitle()."','".$this->getDescription()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM stage
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

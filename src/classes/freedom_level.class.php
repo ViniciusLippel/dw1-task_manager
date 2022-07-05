@@ -1,7 +1,10 @@
 <?php
 
-class freedom_level{
+include_once "../interfaces/table.interface.php";
 
+class freedom_level implements Table{
+
+    // TODO: add attribute 'name' to freedom_level (db and class)
     private $id;
     private $description;
     private $create_stage;
@@ -270,6 +273,47 @@ class freedom_level{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO freedom_level (
+                            description, 
+                            create_stage, 
+                            edit_stage, 
+                            delete_stage,
+                            create_task,
+                            edit_task,
+                            delete_task,
+                            add_user,
+                            delete_user,
+                            edit_project,
+                            delete_project
+                            )
+				VALUES ('".$this->getDescription()."',
+                        ".$this->getCreate_stage().",
+                        ".$this->getEdit_stage().",
+                        ".$this->getDelete_stage().",
+                        ".$this->getCreate_task().",
+                        ".$this->getEdit_task().",
+                        ".$this->getDelete_task().",
+                        ".$this->getAdd_user().",
+                        ".$this->getDelete_user().",
+                        ".$this->getEdit_project().",
+                        ".$this->getDelete_project().")";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM freedom_level
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

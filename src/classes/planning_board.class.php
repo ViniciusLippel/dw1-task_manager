@@ -1,6 +1,8 @@
 <?php
 
-class planning_board{
+include_once "../interfaces/table.interface.php";
+
+class planning_board implements Table{
     
     private $id;
     private $project_id;
@@ -93,6 +95,25 @@ class planning_board{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO planning_board (project_id, name, description)
+				VALUES ('".$this->getProject_id()."','".$this->getName()."','".$this->getDescription()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM planning_board
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

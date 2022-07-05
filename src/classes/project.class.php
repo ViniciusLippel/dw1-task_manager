@@ -1,6 +1,8 @@
 <?php
 
-class project{
+include_once "../interfaces/table.interface.php";
+
+class project implements Table{
     
     private $id;
     private $name;
@@ -71,6 +73,25 @@ class project{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO project (name, description)
+				VALUES ('".$this->getName()."','".$this->getDescription()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM project
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

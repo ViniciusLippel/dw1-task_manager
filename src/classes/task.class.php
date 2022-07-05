@@ -1,6 +1,8 @@
 <?php
 
-class task{
+include_once "../interfaces/table.interface.php";
+
+class task implements Table{
 
     private $id;
     private $stage_id;
@@ -203,6 +205,25 @@ class task{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO task (stage_id, title, description, created_on, deadline, time_elapsed, creator_user_id, responsible_user_id)
+				VALUES ('".$this->getStage_id()."','".$this->getTitle()."','".$this->getDescription()."','".$this->getCreated_on()."','".$this->getDeadline()."','".$this->getTime_elapsed()."','".$this->getCreator_user_id()."','".$this->getResponsible_user_id()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM task
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

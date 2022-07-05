@@ -1,7 +1,7 @@
 <?php
     include_once "../../db/default.inc.php";
     require_once "../../db/Connection.php";
-    include_once "../classes/project.class.php";
+    include_once "../classes/login.class.php";
     include_once "../interfaces/table.interface.php";
     include_once "../classes/db.class.php";
     
@@ -16,11 +16,11 @@
     echo $action;
 
     if ($action == 'save'){
-        $project = new Project(0, $_POST["name"], $_POST["description"]);
+        $project = new Login($_POST["user_id"], $_POST["password"]);
         $db->insert($project);
     }
     elseif ($action == 'delete'){
-        $project = new Project($_GET["id"], null, null);
+        $project = new Login($_GET["user_id"], null);
         $db->delete($project);
     }
     

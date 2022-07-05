@@ -1,7 +1,7 @@
 <?php
     include_once "../../db/default.inc.php";
     require_once "../../db/Connection.php";
-    include_once "../classes/project.class.php";
+    include_once "../classes/stage.class.php";
     include_once "../interfaces/table.interface.php";
     include_once "../classes/db.class.php";
     
@@ -16,12 +16,12 @@
     echo $action;
 
     if ($action == 'save'){
-        $project = new Project(0, $_POST["name"], $_POST["description"]);
-        $db->insert($project);
+        $stage = new Stage(0, $_POST["planning_board_id"], $_POST["title"], $_POST["description"]);
+        $db->insert($stage);
     }
     elseif ($action == 'delete'){
-        $project = new Project($_GET["id"], null, null);
-        $db->delete($project);
+        $stage = new Stage($_GET["id"], null, null, null);
+        $db->delete($stage);
     }
     
 ?>

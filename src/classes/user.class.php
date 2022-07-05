@@ -1,6 +1,8 @@
 <?php
 
-class user{
+include_once "../interfaces/table.interface.php";
+
+class user implements Table{
 
     private $id;
     private $name;
@@ -117,6 +119,24 @@ class user{
         return $this;
     }
 
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO public.user (name, email, birth_date, lgpd)
+				VALUES ('".$this->getName()."','".$this->getEmail()."','".$this->getBirth_date()."',".$this->getLgpd().")";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM public.user
+				WHERE id = ".$this->getId();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>
