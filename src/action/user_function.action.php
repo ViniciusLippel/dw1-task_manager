@@ -1,7 +1,7 @@
 <?php
     include_once "../../db/default.inc.php";
     require_once "../../db/Connection.php";
-    include_once "../classes/observer.class.php";
+    include_once "../classes/user_function.class.php";
     include_once "../interfaces/table.interface.php";
     include_once "../classes/db.class.php";
     
@@ -16,12 +16,12 @@
     echo $action;
 
     if ($action == 'save'){
-        $observer = new Observer($_POST["user_id"], $_POST["task_id"]);
-        $db->insert($observer);
+        $user_function = new User_function($_POST["user_id"], $_POST["function_id"], $_POST["planning_board_id"]);
+        $db->insert($user_function);
     }
     elseif ($action == 'delete'){
-        $observer = new Observer($_GET["user_id"], $_GET["task_id"]);
-        $db->delete($observer);
+        $user_function = new User_function($_GET["user_id"], $_GET["function_id"], $_GET["planning_board_id"]);
+        $db->delete($user_function);
     }
     
 ?>

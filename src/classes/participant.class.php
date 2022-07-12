@@ -1,6 +1,8 @@
 <?php
 
-class participant{
+include_once "../interfaces/table.interface.php";
+
+class participant implements Table{
 
     private $user_id;
     private $task_id;
@@ -49,6 +51,25 @@ class participant{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO participant (user_id, task_id)
+				VALUES ('".$this->getUser_id()."','".$this->getTask_id()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM participant
+				WHERE user_id = ".$this->getUser_id()." AND task_id = ".$this->getTask_id();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

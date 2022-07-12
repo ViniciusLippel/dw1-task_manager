@@ -1,6 +1,8 @@
 <?php
 
-class user_function{
+include_once "../interfaces/table.interface.php";
+
+class user_function implements Table{
     
     private $user_id;
     private $function_id;
@@ -71,6 +73,25 @@ class user_function{
 
         return $this;
     }
+
+    // DB manipulation methods
+	public function insertQuery(){
+		return "INSERT INTO user_function (user_id, function_id, planning_board_id)
+				VALUES ('".$this->getUser_id()."','".$this->getFunction_id()."','".$this->getPlanning_board_id()."')";
+	}
+
+	public function deleteQuery(){
+		return "DELETE FROM user_function
+				WHERE user_id = ".$this->getUser_id()." AND function_id = ".$this->getFunction_id()." AND planning_board_id = ".$this->getPlanning_board_id();
+	}
+
+    public function readQuery(){
+
+	}
+
+	public function updateQuery(){
+
+	}
 }
 
 ?>

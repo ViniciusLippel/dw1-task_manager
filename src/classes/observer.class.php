@@ -60,7 +60,7 @@ class observer implements Table{
 
 	public function deleteQuery(){
 		return "DELETE FROM observer
-				WHERE user_id = ".$this->getUser_id()." AND task_id = ".;
+				WHERE user_id = ".$this->getUser_id()." AND task_id = ".$this->getTask_id();
 	}
 
     public function readQuery(){

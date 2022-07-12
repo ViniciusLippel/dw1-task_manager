@@ -40,7 +40,7 @@
             <td><?php echo $planning_board->getProject_id();?></td>
             <td><?php echo $planning_board->getName();?></td>
             <td><?php echo $planning_board->getDescription();?></td>
-
+            <td><a href="user_function.read.php?planning_board_id=<?=$planning_board->getId()?>&planning_board_name=<?=$planning_board->getName()?>">Users</a></td>
             <td><a href="javascript:deleteRegister('../action/planning_board.action.php?action=delete&id=<?=$planning_board->getId()?>')">Delete</a></td>
 	    </tr>
         <?php } ?>   

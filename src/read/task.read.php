@@ -50,7 +50,8 @@
             <td><?php echo $task->getTime_elapsed();?></td>
             <td><?php echo $task->getCreator_user_id();?></td>
             <td><?php echo $task->getResponsible_user_id();?></td>
-
+            <td><a href="observer.read.php?action=route&task_id=<?=$task->getId()?>&task_title=<?=$task->getTitle()?>">Observers</a></td>
+            <td><a href="participant.read.php?action=route&task_id=<?=$task->getId()?>&task_title=<?=$task->getTitle()?>">Participants</a></td>
             <td><a href="javascript:deleteRegister('../action/task.action.php?action=delete&id=<?=$task->getId()?>')">Delete</a></td>
 	    </tr>
         <?php } ?>   

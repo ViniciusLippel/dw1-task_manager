@@ -12,7 +12,7 @@
             <legend>Create Login</legend><br>
             
             <input type="hidden" name="id" id="id">
-
+            
             <label for="user_id">User_id: </label><br>
             <input type="text" name="user_id" id="user_id"><br><br>
 
